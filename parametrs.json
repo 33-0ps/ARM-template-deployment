@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westus2"
+        },
+        "networkInterfaceName": {
+            "value": "linuxvm1516"
+        },
+        "networkSecurityGroupName": {
+            "value": "linuxvm1-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/7c356de2-bd52-44d5-a3b1-ca43fba5b35c/resourceGroups/spring3Hibernate1/providers/Microsoft.Network/virtualNetworks/spring3Hibernate1vnet507"
+        },
+        "publicIpAddressName": {
+            "value": "linuxvm1-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "linuxvm1"
+        },
+        "virtualMachineComputerName": {
+            "value": "linuxvm1"
+        },
+        "virtualMachineRG": {
+            "value": "spring3Hibernate1"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B2ms"
+        },
+        "adminUsername": {
+            "value": "linuxvm1"
+        },
+        "adminPassword": {
+            "value": null
+        }
+    }
+}
